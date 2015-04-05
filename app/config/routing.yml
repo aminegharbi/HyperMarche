@@ -1,0 +1,7 @@
+backend_tools:
+    resource: "@BackendToolsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

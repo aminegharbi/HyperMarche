@@ -1,0 +1,16 @@
+backend_tools_Apercu:
+    path:     /Apercu/{id}
+    defaults: { _controller: BackendToolsBundle:Default:Apercu}
+backend_tools_Detail:
+    path:     /Detail/{id}
+    defaults: { _controller: BackendToolsBundle:Default:Detail}
+backend_tools_Search:
+    path:     /Search/{id}
+    defaults: { _controller: BackendToolsBundle:Default:Search}
+    
+backend_tools_homepage:
+    path:     /
+    defaults: { _controller: BackendToolsBundle:Default:index }
+backend_tools_Afficher:
+    path:     /
+    defaults: { _controller: BackendToolsBundle:Default:Afficher}

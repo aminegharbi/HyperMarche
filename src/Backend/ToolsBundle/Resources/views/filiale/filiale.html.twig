@@ -1,0 +1,521 @@
+{% extends 'BackendToolsBundle::base.html.twig' %}
+{% block body %}
+<section class="sidebar-page">
+        <div class="container">
+          <!-- ========================================= SIDEBAR ========================================= -->
+          <div class="col-xs-12 col-sm-3 no-margin sidebar narrow">
+            <!-- ========================================= PRODUCT FILTER ========================================= -->
+            <div class="widget">
+              <h1>Filtre Produit Promo</h1>
+              <div class="body bordered">
+                <div class="category-filter">
+                  <h2>Nos Produits</h2>
+                  <hr>
+                  <ul>
+                        {%for t in typeproduit%}
+                         <li><input checked="checked" class="le-checkbox" type="checkbox">
+                      <label>{{t.type}}</label> <span class="pull-right">({{t.nbr}})</span></li> 
+                                  {%endfor%}
+                    
+                  </ul>
+                </div>
+                <!-- /.category-filter -->
+                <div class="price-filter">
+                  <h2>Prix</h2>
+                  <hr>
+                  <div class="price-range-holder"> <input class="price-slider"
+                      value="" type="text"> <span class="min-max"> Price:&nbsp;
+                      -&nbsp; </span> <span class="filter-button"> <a href="#">Filter</a>
+                    </span> </div>
+                </div>
+                <!-- /.price-filter --> </div>
+              <!-- /.body --> </div>
+            <!-- /.widget -->
+            <!-- ========================================= PRODUCT FILTER : END ========================================= -->
+            <!-- ========================================= CATEGORY TREE ========================================= -->
+        
+            <!-- /.category-accordions -->
+            <!-- ========================================= CATEGORY TREE : END ========================================= -->
+            <!-- ========================================= LINKS ========================================= -->
+            <div class="widget">
+              <h1 class="border">Nos Catalogues</h1>
+              <div class="body">
+                <ul class="le-links">
+                  <li><a href="#">delivery</a></li>
+                  <li><a href="#">secure payment</a></li>
+                  <li><a href="#">our stores</a></li>
+                  <li><a href="#">contact</a></li>
+                </ul>
+                <!-- /.le-links --> </div>
+              <!-- /.body --> </div>
+            <!-- /.widget -->
+            <!-- ========================================= LINKS : END ========================================= -->
+            <div class="widget">
+              <div class="simple-banner"> <br>
+              </div>
+            </div>
+            <!-- ========================================= FEATURED PRODUCTS ========================================= -->
+            <div class="widget"><br>
+              <ul class="product-list">
+                <li class="sidebar-product-list-item">
+                  <div class="row">
+                    <div class="col-xs-8 col-sm-8 no-margin">
+                      <div class="price"> </div>
+                    </div>
+                  </div>
+                  <br>
+                </li>
+                <!-- /.sidebar-product-list-item -->
+              </ul>
+              <!-- /.product-list --> </div>
+            <!-- /.widget -->
+            <!-- ========================================= FEATURED PRODUCTS : END ========================================= -->
+          </div>
+          <!-- ========================================= SIDEBAR : END ========================================= -->
+          <!-- ========================================= CONTENT ========================================= -->
+          <div class="col-xs-12 col-sm-9 no-margin wide sidebar page-main-content">
+            <div id="single-product" class="row">
+              <div class="no-margin col-xs-12 col-sm-6 col-md-5 gallery-holder">
+                <div class="product-item-holder size-big single-product-gallery small-gallery">
+                  <div id="owl-single-product">
+                    <div class="single-product-gallery-item" id="slide1"> <a data-rel="prettyphoto"
+                        href="../images/products/product-gallery-01.jpg"> <img style="width: 408px;"
+                          class="img-responsive" alt=""  src="{{asset(Hyper.lienphoto1)}}"
+                          data-echo="{{asset(Hyper.lienphoto1)}}">
+                      </a> </div>
+                    <!-- /.single-product-gallery-item -->
+                   
+                    <!-- /.single-product-gallery-item -->
+                   
+                    <!-- /.single-product-gallery-item --> </div>
+                  <!-- /.single-product-slider -->
+               
+                  <!-- /.gallery-thumbs --> </div>
+                <!-- /.single-product-gallery --> </div>
+              <!-- /.gallery-holder -->
+              <div class="no-margin col-xs-12 col-sm-7 body-holder">
+                <div class="body">
+                  <div class="star-holder inline"> </div>
+                  <div class="title"><a href="#">{{Hyper.nom}}<br>
+                    </a></div>
+                  {{Hyper.phrasehyper}}<br>
+                  <br>
+                  <div class="social-row"> <span class="st_facebook_hcount"></span>
+                    <span class="st_twitter_hcount"></span> <span class="st_pinterest_hcount"></span>
+                  </div>
+                  <div class="buttons-holder"> <a class="btn-add-to-wishlist" href="#">add
+                      to wishlist</a> <a class="btn-add-to-compare" href="#">add
+                      to compare list</a> </div>
+                  <div class="excerpt">
+                    <p>description mg</p>
+                  </div>
+                  <div class="prices">
+                    <div class="price-prev"><br>
+                    </div>
+                  </div>
+                  <!-- /.qnt-holder --> </div>
+                <!-- /.body --> </div>
+              <!-- /.body-holder --> </div>
+            <!-- /.row #single-product -->
+            <!-- ========================================= SINGLE PRODUCT TAB ========================================= -->
+            <section id="single-product-tab">
+              <div class="no-container">
+                <div class="tab-holder">
+                  <ul class="nav nav-tabs simple">
+                    <li class="active"><a href="#description" data-toggle="tab">Nos Magasin</a></li>
+                    <li><a href="#additional-info" data-toggle="tab">Nos Promotions</a></li>
+                    <li><a href="#reviews" data-toggle="tab">Reviews (3)</a></li>
+                  </ul>
+                  <!-- /.nav-tabs -->
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="description">
+
+					
+					
+					
+					
+					
+					
+					
+					
+                        
+					
+					
+					
+	         <section>
+    <div class="grid-list-products">
+       
+        
+        <div class="control-bar">
+             <form  method="post"  id="search-form" action="{{ path('backend_tools_Apercu',{id:Hyper.id}) }}" >
+            <div id="popularity-sort" class="le-select" >
+                <select  name="ville" id="vil">
+                    <option value="">Selectionner Une Ville</option>
+                   
+                    {%for v in villes%}
+                          {% if villeselection == v.id %}
+                                      <option value="{{v.id}}" selected >	{{v.nom}} </option>
+				 {% else %}	
+                                      <option value="{{v.id}}"  >	{{v.nom}} </option>
+                                 {%endif %}   
+                                  {%endfor%}
+                                
+                </select>
+            </div>
+            
+         
+
+            <div class="grid-list-buttons">
+                <ul>
+                    <li class="grid-list-button-item active"><a data-toggle="tab" ><i class="fa fa-th-largese"></i></a> &nbsp;<input type="submit" value="Rechercher"/>	</li>
+
+                </ul>
+            </div>
+              
+             </form>
+        </div><!-- /.control-bar -->
+                                
+        <div class="tab-content">
+           
+            <div id="list-view" class="products-grid fade tab-pane in active">
+                <div class="products-list">
+                    
+                    <div class="product-item product-item-holder">
+                         {% if filiales != null %}
+                       {%for f in filiales%}
+                     <form  method="post"  id="search-form" action="{{ path('backend_tools_Detail',{id:f.id}) }}" >
+
+                        <div class="row">
+                             
+                            <div class="no-margin col-xs-12 col-sm-4 image-holder">
+                                <div class="image">
+                                    <img alt=""  src="{{asset(Hyper.lienphoto1)}}"
+                          data-echo="{{asset(Hyper.lienphoto1)}}" />
+                                </div>
+                            </div><!-- /.image-holder -->
+                            <div class="no-margin col-xs-12 col-sm-5 body-holder2">
+                                <div class="body">
+                                   
+                                    <div class="title">
+                                        <a href="single-product.html">Magasin {{f.localite}}</a>
+                                    </div>
+                                    
+                                    
+                                 
+                                </div>
+                            </div><!-- /.body-holder -->
+                            <div class="no-margin col-xs-12 col-sm-3 price-area">
+                                <div class="right-clmn">
+                                
+                                    <div class="availability"><label>Disponibilité:</label><span class="available">  Ouvert</span></div>
+                                  
+                                   <input class="le-button" type="submit" value="Informations"/>
+                                </div>
+                            </div><!-- /.price-area -->
+                        </div>
+                     </form>
+                           {%endfor%}   
+                           {%else%}
+                               <br>
+                               <center><b> Aucun Hypermarché Trouvé</b></center>
+                           {%endif %}      
+                           
+                           <!-- /.row -->
+                    </div><!-- /.product-item -->
+
+
+                </div><!-- /.products-list -->
+
+                <div class="pagination-holder">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 text-left">
+                            <ul class="pagination">
+                                <li class="current"><a  href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">next</a></li>
+                            </ul><!-- /.pagination -->
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="result-counter">
+                                Showing <span>1-9</span> of <span>11</span> results
+                            </div><!-- /.result-counter -->
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.pagination-holder -->
+
+            </div><!-- /.products-grid #list-view -->
+
+        </div><!-- /.tab-content -->
+    </div><!-- /.grid-list-products -->
+
+</section>			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+
+                      <!-- /.meta-row --> </div>
+                    <!-- /.tab-pane #description -->
+                    <div class="tab-pane" id="additional-info">
+                      <ul class="tabled-data">
+                        <li> <label>weight</label>
+                          <div class="value">7.25 kg</div>
+                        </li>
+                        <li> <label>dimensions</label>
+                          <div class="value">90x60x90 cm</div>
+                        </li>
+                        <li> <label>size</label>
+                          <div class="value">one size fits all</div>
+                        </li>
+                        <li> <label>color</label>
+                          <div class="value">white</div>
+                        </li>
+                        <li> <label>guarantee</label>
+                          <div class="value">5 years</div>
+                        </li>
+                      </ul>
+                      <!-- /.tabled-data -->
+                      <div class="meta-row">
+                        <div class="inline"> <label>SKU:</label> <span>54687621</span>
+                        </div>
+                        <!-- /.inline --> <span class="seperator">/</span>
+                        <div class="inline"> <label>categories:</label> <span><a
+                              href="#">-50% sale</a>,</span> <span><a href="#">gaming</a>,</span>
+                          <span><a href="#">desktop PC</a></span> </div>
+                        <!-- /.inline --> <span class="seperator">/</span>
+                        <div class="inline"> <label>tag:</label> <span><a href="#">fast</a>,</span>
+                          <span><a href="#">gaming</a>,</span> <span><a href="#">strong</a></span>
+                        </div>
+                        <!-- /.inline --> </div>
+                      <!-- /.meta-row --> </div>
+                    <!-- /.tab-pane #additional-info -->
+                   
+                    <!-- /.tab-pane #reviews --> </div>
+                  <!-- /.tab-content --> </div>
+                <!-- /.tab-holder --> </div>
+              <!-- /.container --> </section>
+            <!-- /#single-product-tab -->
+            <!-- ========================================= SINGLE PRODUCT TAB : END ========================================= -->
+            <!-- ========================================= RECENTLY VIEWED ========================================= -->
+            <section id="recently-reviewd" class="wow fadeInUp">
+              <div class="no-container">
+                <div class="carousel-holder hover">
+                  <div class="title-nav">
+                    <h2 class="h1">Dernieres&nbsp; Offres</h2>
+                    <div class="nav-holder"> </div>
+                  </div>
+                  <!-- /.title-nav -->
+                  <div id="owl-recently-viewed-2" class="owl-carousel product-grid-holder">
+                    <div class="no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="ribbon red"><span>sale</span></div>
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-11.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">LC-70UD1U
+                              70" class aquos 4K ultra HD</a> </div>
+                          <div class="brand">Sharp</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to Cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder -->
+                    <div class="no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="ribbon blue"><span>new!</span></div>
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-12.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">cinemizer
+                              OLED 3D virtual reality TV Video</a> </div>
+                          <div class="brand">zeiss</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder -->
+                    <div class=" no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-13.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">s2340T23"
+                              full HD multi-Touch Monitor</a> </div>
+                          <div class="brand">dell</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder -->
+                    <div class=" no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="ribbon blue"><span>new!</span></div>
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-14.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">kardon
+                              BDS 7772/120 integrated 3D</a> </div>
+                          <div class="brand">harman</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder -->
+                    <div class=" no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="ribbon green"><span>bestseller</span></div>
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-15.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">netbook
+                              acer travel B113-E-10072</a> </div>
+                          <div class="brand">acer</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder -->
+                    <div class=" no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-16.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">iPod
+                              touch 5th generation,64GB, blue</a> </div>
+                          <div class="brand">apple</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder -->
+                    <div class=" no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-13.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">s2340T23"
+                              full HD multi-Touch Monitor</a> </div>
+                          <div class="brand">dell</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder -->
+                    <div class=" no-margin carousel-item product-item-holder size-medium hover">
+                      <div class="product-item">
+                        <div class="ribbon blue"><span>new!</span></div>
+                        <div class="image"> <img alt="" src="assets/images/blank.gif"
+                            data-echo="assets/images/products/product-14.jpg"> </div>
+                        <div class="body">
+                          <div class="title"> <a href="single-product.html">kardon
+                              BDS 7772/120 integrated 3D</a> </div>
+                          <div class="brand">harman</div>
+                        </div>
+                        <div class="prices">
+                          <div class="price-current text-right">$1199.00</div>
+                        </div>
+                        <div class="hover-area">
+                          <div class="add-cart-button"> <a href="single-product.html"
+                              class="le-button">Add to cart</a> </div>
+                          <div class="wish-compare"> <a class="btn-add-to-wishlist"
+                              href="#">Add to Wishlist</a> <a class="btn-add-to-compare"
+                              href="#">Compare</a> </div>
+                        </div>
+                      </div>
+                      <!-- /.product-item --> </div>
+                    <!-- /.product-item-holder --> </div>
+                  <!-- /#recently-carousel --> </div>
+                <!-- /.carousel-holder --> </div>
+              <!-- /.container --> </section>
+            <!-- /#recently-reviewd -->
+            <!-- ========================================= RECENTLY VIEWED : END ========================================= -->
+          </div>
+          <!-- /.page-main-content -->
+          <!-- ========================================= CONTENT : END ========================================= -->
+        </div>
+        <!-- /.container --> </section>
+      <!-- /.sidebar-page -->
+      {% endblock %}

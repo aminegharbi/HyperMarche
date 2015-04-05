@@ -1,0 +1,78 @@
+{% extends 'BackendToolsBundle::base.html.twig' %}
+
+{% block body %}
+ <!-- ========================================= MAIN ========================================= -->
+      <main id="contact-us" class="inner-bottom-md">
+        <section class="google-map map-holder">
+            <div id="map" class="map center"></div>
+          <form role="form" class="get-direction">
+            <div class="container">
+              <div class="row">
+                <div class="center-block col-lg-10">
+                  <div class="input-group"> <input class="le-input input-lg form-control"
+                      placeholder="Enter Your Starting Point" type="text"> <span
+                      class="input-group-btn"> <button class="btn btn-lg le-button"
+                        type="button">Get Directions</button> </span> </div>
+                  <!-- /input-group --> </div>
+                <!-- /.col-lg-6 --> </div>
+              <!-- /.row --> </div>
+          </form>
+        </section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <section class="section leave-a-message">
+                <h2 class="bordered">Reclamation,Renseignement , Proposition</h2>
+                <p>Pour toute reclamation , demande ou proposition</p>
+                <form id="contact-form" class="contact-form cf-style-1 inner-top-xs"
+                  method="post">
+                  <div class="row field-row">
+                    <div class="col-xs-12 col-sm-6"> <label>Your Name*</label>
+                      <input class="le-input"> </div>
+                    <div class="col-xs-12 col-sm-6"> <label>Your Email*</label>
+                      <input class="le-input"> </div>
+                  </div>
+                  <!-- /.field-row -->
+                  <div class="field-row"> <label>Subject</label> <input class="le-input"
+                      type="text"> </div>
+                  <!-- /.field-row -->
+                  <div class="field-row"> <label>Your Message</label> <textarea
+                      rows="8" class="le-input"></textarea> </div>
+                  <!-- /.field-row -->
+                  <div class="buttons-holder"> <button type="submit" class="le-button huge">Send
+                      Message</button> </div>
+                  <!-- /.buttons-holder --> </form>
+                <!-- /.contact-form --> </section>
+              <!-- /.leave-a-message --> </div>
+            <!-- /.col -->
+            <div class="col-md-4">
+              <section class="our-store section inner-left-xs">
+                <h2 class="bordered">Adresse</h2>
+                <address> 17 Princess Road <br>
+                  London, Greater London <br>
+                  NW1 8JR, UK </address>
+                <h3>Heure De Travail</h3>
+                <ul class="list-unstyled operation-hours">
+                  <li class="clearfix"> <span class="day">Lundi:</span> <span
+                      class="pull-right hours">8h-21h</span> </li>
+                  <li class="clearfix"> Mardi<span class="day">:</span><span class="pull-right hours">8h-21h</span><span
+                      class="pull-right hours"></span> </li>
+                  <li class="clearfix"> Mercredi<span class="day">:</span> <span
+                      class="pull-right hours">8h-21h</span> </li>
+                  <li class="clearfix"> Jeudi<span class="day">:</span> <span class="pull-right hours">8h-21h</span>
+                  </li>
+                  <li class="clearfix"> Vendredi<span class="day">:</span> <span
+                      class="pull-right hours">8h-21h</span> </li>
+                  <li class="clearfix"> Samedi<span class="day">:</span> <span
+                      class="pull-right hours">8h-21h</span> </li>
+                  <li class="clearfix"> Dimanche<span class="pull-right hours">fermé</span>
+                  </li>
+                </ul>
+                <br>
+              </section>
+              <!-- /.our-store --> </div>
+            <!-- /.col --> </div>
+          <!-- /.row --> </div>
+        <!-- /.container --> </main>
+      <!-- ========================================= MAIN : END ========================================= -->
+      {% endblock %}
